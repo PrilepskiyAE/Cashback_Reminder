@@ -1,14 +1,16 @@
 package com.cashbackreminder.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.cashbackreminder.BaseFragment
-import com.cashbackreminder.MainActivity
-import com.cashbackreminder.ViewPagerFragmentStateAdapter
 import com.cashbackreminder.databinding.FragmentMainBinding
+
+import com.google.firebase.ktx.Firebase
+
+
+import com.google.firebase.storage.ktx.storage
 
 
 class MainFragment : BaseFragment<FragmentMainBinding>() {
@@ -25,8 +27,17 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
 
 
         super.onViewCreated(view, savedInstanceState)
+        val  storage = Firebase.storage
+       // var storageRef = storage.reference
+        //val pathReference = storageRef.child("images/test.apk")
+      //  val gsReference = storage.getReferenceFromUrl("gs://message-543c9.appspot.com/APKPure_v3.17.42_apkpure.com.apk")
+        //val httpsReference = storage.getReferenceFromUrl("https://firebasestorage.googleapis.com/v0/b/message-543c9.appspot.com/o/APKPure_v3.17.42_apkpure.com.apk")
         binding.button.setOnClickListener {
             requireActivity().finish()
         }
+binding.button2.setOnClickListener {
+    val gsReference = storage.getReferenceFromUrl("gs://message-543c9.appspot.com/APKPure_v3.17.42_apkpure.com.apk")
+}
+
     }
 }
