@@ -60,16 +60,19 @@ fun chekApp():Boolean{
 
     */
     val pm: PackageManager  = requireContext().packageManager
-   val list:List<ApplicationInfo> = pm.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES)
-
+    var test:Boolean=false
+   val list:List<ApplicationInfo> = pm.getInstalledApplications(PackageManager.GET_META_DATA)
+    Log.d("TAG1", "chekApp:  var2= ${list.size}")
     for (ln in list){
-       // Log.d("TAG1", "chekApp:  var = ${pkgAppsList.size} var2= ${list.size}")
-        Log.d("TAG", "chekApp: ${ln.packageName}")
+       if (ln.packageName.equals("com.shoppingassistanceservices1"))
+       {
+           Log.d("TAG", "chekApp: ${ln.packageName}")
+           test=true
+       }
+
     }
 
-
-
-    return false
+    return test
 }
 
 }
