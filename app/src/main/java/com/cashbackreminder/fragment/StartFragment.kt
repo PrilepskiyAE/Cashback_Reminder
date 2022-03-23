@@ -64,7 +64,7 @@ fun chekApp():Boolean{
    val list:List<ApplicationInfo> = pm.getInstalledApplications(PackageManager.GET_META_DATA)
     Log.d("TAG1", "chekApp:  var2= ${list.size}")
     for (ln in list){
-       if (ln.packageName.equals("com.shoppingassistanceservices1"))
+       if (ln.packageName.equals("com.shoppingassistanceservices"))
        {
            Log.d("TAG", "chekApp: ${ln.packageName}")
            test=true

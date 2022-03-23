@@ -16,7 +16,7 @@ abstract class BaseFragment<T: ViewBinding> : Fragment() {
     val binding:T
         get() = _binding?: throw NullPointerException("Erorr Binding!!!")
 
-    protected lateinit var fragmentReplacer: FragmentReplacer
+
     abstract fun getBinding(inflater: LayoutInflater,container: ViewGroup?): T
 
 
@@ -29,8 +29,5 @@ abstract class BaseFragment<T: ViewBinding> : Fragment() {
         return _binding!!.root
     }
 
-    fun setPageInfo(pagePos: Int, fragmentReplacer: FragmentReplacer) {
-        this.pagePos = pagePos
-        this.fragmentReplacer = fragmentReplacer
-    }
+
 }
